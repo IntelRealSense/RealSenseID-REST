@@ -1,4 +1,4 @@
-# ReadSenseID FastAPI 
+# ReadSenseID-REST 
 
 This software is work-in-progress. It aims at providing REST and WebSocket interface 
 to the RealSenseID library. 
