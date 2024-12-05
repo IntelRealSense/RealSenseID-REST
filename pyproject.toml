@@ -1,0 +1,179 @@
+[tool.poetry]
+name = "realsenseid-fastapi"
+version = "0.1.0"
+description = ""
+authors = ["RealSenseID Team"]
+readme = "README.md"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Sample",
+    "Typing :: Typed",
+]
+package-mode = false
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = { extras = ["all"], version = "^0.115.5" }
+uvicorn = "^0.32.1"
+pydantic = "^2.10.2"
+pydantic-settings = "^2.1.0"
+asgi-correlation-id = "^4.3.1"
+loguru = "^0.7.2"
+asgi-lifespan = "^2.1.0"
+uvloop = { version = "^0.21.0", markers = "sys_platform != 'win32'" }
+pyserial = "^3.5"
+numpy = "^2.1.3"
+simplejpeg = "^1.7.2"                   # For serving stream
+opencv-python-headless = "^4.9.0.80"    # For image conversion / image enrolment
+python-multipart = "^0.0.19"
+nicegui = "^2.7.0"
+qdrant-client = "^1.9.1"
+realsenseid = "0.38.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-mock = "*"
+pytest-asyncio = "^0.24.0"
+flake8 = { version = '*'}
+coverage = { version = '*'}
+black = { version = '*'}
+ruff = { version = '*'}
+bandit = "^1.8.0"
+Flake8-pyproject = "^1.2.3"
+pytest-httpx = "^0.35.0"
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.31.1"
+pybind11-stubgen = "*"
+
+[tool.flake8]
+exclude = ['.venv', 'venv', 'venv-win', 'venv-macos']
+max-line-length = 120
+extend-ignore = ['E203', 'E704']
+per-file-ignores = [
+    '__init__.py:F401',
+]
+count = true
+
+[tool.ruff]
+lint.select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort
+    "C", # flake8-comprehensions
+    "B", # flake8-bugbear
+    "UP", # pyupgrade
+]
+lint.ignore = [
+    "E501", # line too long, handled by black
+    "B008", # do not perform function calls in argument defaults
+    "C901", # too complex
+    "W191", # indentation contains tabs
+]
+line-length = 120
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".venv",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.lint.isort]
+known-third-party = ["fastapi", "pydantic", "starlette"]
+
+[tool.ruff.lint.pep8-naming]
+classmethod-decorators = [
+    # Allow Pydantic's `@validator` decorator to trigger class method treatment.
+    "pydantic.validator",
+    # Allow SQLAlchemy's dynamic decorators, like `@field.expression`, to trigger class method treatment.
+    "declared_attr",
+    "expression",
+    "comparator",
+]
+
+[tool.ruff.lint.pylint]
+allow-dunder-method-names = ["__tablename__", "__table_args__"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = [
+    "--strict-config",
+    "--strict-markers",
+    "-ra",
+]
+xfail_strict = true
+junit_family = "xunit2"
+testpaths = [
+    "tests",
+    "integration",
+]
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+source = [
+    "tests",
+    "app"
+]
+context = '${CONTEXT}'
+
+[tool.poe.tasks.test]
+help = "Run tests"
+cmd = "pytest -v -rA"
+env = { "app_env" = "test" }
+
+[tool.poe.tasks.coverage]
+help = "Run coverage report"
+env = { "app_env" = "test" }
+sequence = [
+    { cmd = "coverage run -m pytest -v" },
+    { cmd = "coverage report --skip-empty -m -i --fail-under=80" },
+]
+
+[tool.poe.tasks.lint]
+help = "Run linters"
+env = { "app_env" = "test" }
+sequence = [
+    { cmd = "flake8" },
+    { cmd = "black . --check --exclude rsid_py.pyi" },
+    { cmd = "ruff check ." },
+    { cmd = "bandit -r app/" },
+]
+
+[tool.poe.tasks.generate_models]
+help = "Generate Pydantic models from rsid_py"
+script = "scripts.tasks.model_generator:generate_models('rsid_rest/rsid_lib/gen/models.py')"
+env = { "PYTHONPATH" = "rsid_rest/rsid_lib" }
+
+[tool.poe.tasks.generate_stubs]
+help = "Generate stubs"
+cmd = " pybind11-stubgen rsid_py -o rsid_rest/rsid_lib"
+env = { "PYTHONPATH" = "rsid_rest/rsid_lib" }
+
+[tool.poe.tasks.gen]
+help = "Generate stubs and models"
+env = { "app_env" = "test" }
+deps = ["generate_stubs", "generate_models"]
+sequence = []
+
+[tool.poe.tasks.gen-openapi]
+help = "Generate export openapi.json file"
+script = "scripts.tasks.export_openapi:export_openapi()"
+
+
+[tool.poe.tasks.run]
+help = "Run server"
+cmd = " fastapi run rsid_rest/main.py"
+env = { "PYTHONPATH" = "rsid_rest/rsid_lib" }
