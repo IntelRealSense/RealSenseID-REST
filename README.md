@@ -1,7 +1,7 @@
 # ReadSenseID-REST 
 
-This software is work-in-progress. It aims at providing REST and WebSocket interface 
-to the RealSenseID library. 
+This software aims to providing REST and WebSocket interface to the RealSenseID library. It is meant to be
+a kickstarter for projects that utilize RealSenseID with remote access.
 
 ## Pre-requisites
 
@@ -110,14 +110,6 @@ Navigate to: https://github.com/OpenAPITools/openapi-generator?tab=readme-ov-fil
 the ability to automatically generate SDK that can use this API.
 
 ---
-## TODO:
-- [x] Add Setting to switch from auto-detect device to preset device
-- [x] Complete API - Cover all device APIs
-  - [ ] Add device ping
-  - [x] Add enroll from image
-  - [x] Add device info (sw/fw version)
-  - [x] Add FaceRect to auth response
-  - [x] Complete the OpenAPI schema
-  - [x] Support preview/streaming
-- [x] Properly document all API endpoints
-- [x] Add Host mode + vector DB sample
+## Important Note
+> End-user is responsible for providing the authentication and security mechanisms to protect access to the camera and RealSenseID API.
+> Please refer to https://fastapi.tiangolo.com/tutorial/security/ for documentation on how to integrate authentication.
