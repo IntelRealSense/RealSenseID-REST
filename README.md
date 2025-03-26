@@ -1,7 +1,7 @@
 # ReadSenseID-REST 
 
-This software aims to providing REST and WebSocket interface to the RealSenseID library. It is meant to be
-a kickstarter for projects that utilize RealSenseID with remote access.
+This software aims to providing REST and WebSocket interface to the RealSenseID library. 
+It is meant to be a kickstarter for projects that utilize RealSenseID with remote access.
 
 ## Pre-requisites
 
