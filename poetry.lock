@@ -1409,14 +1409,14 @@ files = [
 
 [[package]]
 name = "nicegui"
-version = "2.9.1"
+version = "2.14.0"
 description = "Create web-based user interfaces with Python. The nice way."
 optional = false
 python-versions = "<4.0,>=3.8"
 groups = ["main"]
 files = [
-    {file = "nicegui-2.9.1-py3-none-any.whl", hash = "sha256:5456f1de34c7d3b62d9349879855b99c6623ea67e4c0b5ff0635010ad3b57d22"},
-    {file = "nicegui-2.9.1.tar.gz", hash = "sha256:1cb944340353fefb6db0c6a27d10b43792fd400d3dbc748426efcef59192c250"},
+    {file = "nicegui-2.14.0-py3-none-any.whl", hash = "sha256:0e4ad7b2614408469450d58f9737a87bc96cfcbbe43c10e81250fe3baff4ad87"},
+    {file = "nicegui-2.14.0.tar.gz", hash = "sha256:2018aedd5b878a2a2b58a5c83e8abf39f625196792286275e7809380c4a1134f"},
 ]
 
 [package.dependencies]
@@ -1428,13 +1428,14 @@ fastapi = ">=0.109.1"
 httpx = ">=0.24.0"
 ifaddr = ">=0.2.0"
 itsdangerous = ">=2.1.2,<3.0.0"
-jinja2 = ">=3.1.5,<4.0.0"
+jinja2 = ">=3.1.6,<4.0.0"
 markdown2 = ">=2.4.7,<2.4.11 || >2.4.11"
 orjson = {version = ">=3.9.15", markers = "platform_machine != \"i386\" and platform_machine != \"i686\""}
 Pygments = ">=2.15.1,<3.0.0"
 python-multipart = ">=0.0.18"
 python-socketio = {version = ">=5.10.0", extras = ["asyncio-client"]}
 requests = ">=2.32.0"
+starlette = {version = ">=0.45.3", markers = "python_version >= \"3.9\""}
 typing-extensions = ">=4.0.0"
 urllib3 = ">=1.26.18,<2.0.0 || >2.0.0,<2.0.1 || >2.0.1,<2.0.2 || >2.0.2,<2.0.3 || >2.0.3,<2.0.4 || >2.0.4,<2.0.5 || >2.0.5,<2.0.6 || >2.0.6,<2.0.7 || >2.0.7,<2.1.0 || >2.1.0,<2.2.0 || >2.2.0,<2.2.1 || >2.2.1"
 uvicorn = {version = ">=0.22.0", extras = ["standard"]}
@@ -1445,7 +1446,8 @@ watchfiles = ">=0.18.1"
 highcharts = ["nicegui-highcharts (>=2.0.2,<3.0.0)"]
 matplotlib = ["matplotlib (>=3.5.0,<4.0.0)"]
 native = ["pywebview (>=5.0.1,<6.0.0)"]
-plotly = ["plotly (>=5.13.0,<6.0.0)"]
+plotly = ["plotly (>=5.13,<7.0)"]
+redis = ["redis (>=4.0.0)"]
 sass = ["libsass (>=0.23.0,<0.24.0)"]
 
 [[package]]
@@ -2569,21 +2571,21 @@ files = [
 
 [[package]]
 name = "starlette"
-version = "0.41.3"
+version = "0.46.1"
 description = "The little ASGI library that shines."
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "starlette-0.41.3-py3-none-any.whl", hash = "sha256:44cedb2b7c77a9de33a8b74b2b90e9f50d11fcf25d8270ea525ad71a25374ff7"},
-    {file = "starlette-0.41.3.tar.gz", hash = "sha256:0e4ab3d16522a255be6b28260b938eae2482f98ce5cc934cb08dce8dc3ba5835"},
+    {file = "starlette-0.46.1-py3-none-any.whl", hash = "sha256:77c74ed9d2720138b25875133f3a2dae6d854af2ec37dceb56aef370c1d8a227"},
+    {file = "starlette-0.46.1.tar.gz", hash = "sha256:3c88d58ee4bd1bb807c0d1acb381838afc7752f9ddaec81bbe4383611d833230"},
 ]
 
 [package.dependencies]
-anyio = ">=3.4.0,<5"
+anyio = ">=3.6.2,<5"
 
 [package.extras]
-full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.7)", "pyyaml"]
+full = ["httpx (>=0.27.0,<0.29.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.18)", "pyyaml"]
 
 [[package]]
 name = "stevedore"
@@ -3124,4 +3126,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "6ba0cb6725d6ef99f0f5ac2ed1bdda6738e7b979af6c20f4e28884ace341f36d"
+content-hash = "69b0875379c5ba9bcca38c96a02c3200c23b27a55639274ce70f694cc68de14c"
