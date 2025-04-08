@@ -1409,14 +1409,14 @@ files = [
 
 [[package]]
 name = "nicegui"
-version = "2.7.0"
+version = "2.9.1"
 description = "Create web-based user interfaces with Python. The nice way."
 optional = false
 python-versions = "<4.0,>=3.8"
 groups = ["main"]
 files = [
-    {file = "nicegui-2.7.0-py3-none-any.whl", hash = "sha256:ab9e72f29b6c87ae8d1540cc5cd0271d2b9ed5dc7f6c896d99f82dfceeeb2e40"},
-    {file = "nicegui-2.7.0.tar.gz", hash = "sha256:f53ccc6f74333cae9fe0f732cacc0e330421c458446fc7e8b9da722117886914"},
+    {file = "nicegui-2.9.1-py3-none-any.whl", hash = "sha256:5456f1de34c7d3b62d9349879855b99c6623ea67e4c0b5ff0635010ad3b57d22"},
+    {file = "nicegui-2.9.1.tar.gz", hash = "sha256:1cb944340353fefb6db0c6a27d10b43792fd400d3dbc748426efcef59192c250"},
 ]
 
 [package.dependencies]
@@ -1428,11 +1428,11 @@ fastapi = ">=0.109.1"
 httpx = ">=0.24.0"
 ifaddr = ">=0.2.0"
 itsdangerous = ">=2.1.2,<3.0.0"
-jinja2 = ">=3.1.4,<4.0.0"
+jinja2 = ">=3.1.5,<4.0.0"
 markdown2 = ">=2.4.7,<2.4.11 || >2.4.11"
 orjson = {version = ">=3.9.15", markers = "platform_machine != \"i386\" and platform_machine != \"i686\""}
 Pygments = ">=2.15.1,<3.0.0"
-python-multipart = ">=0.0.7"
+python-multipart = ">=0.0.18"
 python-socketio = {version = ">=5.10.0", extras = ["asyncio-client"]}
 requests = ">=2.32.0"
 typing-extensions = ">=4.0.0"
@@ -3124,4 +3124,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "0d9cb064384db6ef02bec8736437b3f876936ef7a44c21223c1d66d9af9011ee"
+content-hash = "d5b73cd19b8148002de36b440ef7c65622bdfaf4280ee419cfb51bc053c05315"
