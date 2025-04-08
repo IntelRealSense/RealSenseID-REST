@@ -53,7 +53,7 @@ Flake8-pyproject = "^1.2.3"
 pytest-httpx = "^0.35.0"
 
 [tool.poetry.group.dev.dependencies]
-poethepoet = "^0.31.1"
+poethepoet = "^0.33.1"
 pybind11-stubgen = "*"
 
 [tool.flake8]
