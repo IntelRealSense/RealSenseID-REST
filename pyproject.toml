@@ -43,7 +43,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.group.test.dependencies]
 pytest = "^8.3.5"
 pytest-mock = "*"
-pytest-asyncio = "^0.24.0"
+pytest-asyncio = "^0.26.0"
 flake8 = { version = '*'}
 coverage = { version = '*'}
 black = { version = '*'}
