@@ -24,7 +24,7 @@ uvicorn = "^0.32.1"
 pydantic = "^2.11.3"
 pydantic-settings = "^2.1.0"
 asgi-correlation-id = "^4.3.1"
-loguru = "^0.7.2"
+loguru = "^0.7.3"
 asgi-lifespan = "^2.1.0"
 uvloop = { version = "^0.21.0", markers = "sys_platform != 'win32'" }
 pyserial = "^3.5"
