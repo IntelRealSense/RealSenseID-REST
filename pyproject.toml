@@ -30,7 +30,7 @@ uvloop = { version = "^0.21.0", markers = "sys_platform != 'win32'" }
 pyserial = "^3.5"
 numpy = "^2.1.3"
 simplejpeg = "^1.7.2"                   # For serving stream
-opencv-python-headless = "^4.9.0.80"    # For image conversion / image enrolment
+opencv-python-headless = "^4.11.0.86"    # For image conversion / image enrolment
 python-multipart = "^0.0.19"
 nicegui = "^2.14.0"
 qdrant-client = "^1.9.1"
