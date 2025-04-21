@@ -1410,14 +1410,14 @@ files = [
 
 [[package]]
 name = "nicegui"
-version = "2.14.0"
+version = "2.15.0"
 description = "Create web-based user interfaces with Python. The nice way."
 optional = false
 python-versions = "<4.0,>=3.8"
 groups = ["main"]
 files = [
-    {file = "nicegui-2.14.0-py3-none-any.whl", hash = "sha256:0e4ad7b2614408469450d58f9737a87bc96cfcbbe43c10e81250fe3baff4ad87"},
-    {file = "nicegui-2.14.0.tar.gz", hash = "sha256:2018aedd5b878a2a2b58a5c83e8abf39f625196792286275e7809380c4a1134f"},
+    {file = "nicegui-2.15.0-py3-none-any.whl", hash = "sha256:0e401108447ae0e6b0a77c1de2611b67c4508f095a6f34d98a4640a2e17e2a08"},
+    {file = "nicegui-2.15.0.tar.gz", hash = "sha256:0b63bcf9634744d285aa618f74c4d57ea7264fd8f8a9e331cf10d528ba37355c"},
 ]
 
 [package.dependencies]
@@ -1433,6 +1433,7 @@ jinja2 = ">=3.1.6,<4.0.0"
 markdown2 = ">=2.4.7,<2.4.11 || >2.4.11"
 orjson = {version = ">=3.9.15", markers = "platform_machine != \"i386\" and platform_machine != \"i686\""}
 Pygments = ">=2.15.1,<3.0.0"
+python-engineio = ">=4.12.0"
 python-multipart = ">=0.0.18"
 python-socketio = {version = ">=5.10.0", extras = ["asyncio-client"]}
 requests = ">=2.32.0"
@@ -2208,14 +2209,14 @@ cli = ["click (>=5.0)"]
 
 [[package]]
 name = "python-engineio"
-version = "4.10.1"
+version = "4.12.0"
 description = "Engine.IO server and client for Python"
 optional = false
 python-versions = ">=3.6"
 groups = ["main"]
 files = [
-    {file = "python_engineio-4.10.1-py3-none-any.whl", hash = "sha256:445a94004ec8034960ab99e7ce4209ec619c6e6b6a12aedcb05abeab924025c0"},
-    {file = "python_engineio-4.10.1.tar.gz", hash = "sha256:166cea8dd7429638c5c4e3a4895beae95196e860bc6f29ed0b9fe753d1ef2072"},
+    {file = "python_engineio-4.12.0-py3-none-any.whl", hash = "sha256:a0c47c129c39777e8ebc6d18011efd50db2144e4e8f08983acae8a3614626535"},
+    {file = "python_engineio-4.12.0.tar.gz", hash = "sha256:f42a36a868d7063aa10ddccf6bd6117a169b6bd00d7ca53999772093b62014f9"},
 ]
 
 [package.dependencies]
@@ -3143,4 +3144,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "437dc1c888f46b17d4da2f93a8dff114528cb3758eb94a73d8ce889aeda15a15"
+content-hash = "2c83876a06f3947936103c47feeb50caafeee6e5ad80821b4d20012c50c08c85"
