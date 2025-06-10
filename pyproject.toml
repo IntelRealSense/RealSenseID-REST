@@ -22,7 +22,7 @@ python = "^3.11"
 fastapi = { extras = ["all"], version = "^0.115.12" }
 uvicorn = "^0.34.3"
 pydantic = "^2.11.3"
-pydantic-settings = "^2.8.1"
+pydantic-settings = "^2.9.1"
 asgi-correlation-id = "^4.3.1"
 loguru = "^0.7.3"
 asgi-lifespan = "^2.1.0"
