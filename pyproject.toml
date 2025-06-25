@@ -33,7 +33,7 @@ simplejpeg = "^1.8.2"                   # For serving stream
 opencv-python-headless = "^4.11.0.86"    # For image conversion / image enrolment
 python-multipart = "^0.0.20"
 nicegui = "^2.20.0"
-qdrant-client = "^1.14.2"
+qdrant-client = "^1.14.3"
 realsenseid = "0.38.2"
 
 [build-system]
